@@ -56,7 +56,7 @@ void PurePursuitNode::initForROS()
   nh_.param("vehicle_info/wheel_base", wheel_base_, double(2.7));
 
   // setup subscriber
-  sub1_ = nh_.subscribe("final_waypoints", 10, &PurePursuitNode::callbackFromWayPoints, this);
+  sub1_ = nh_.subscribe("optimized_waypoints", 10, &PurePursuitNode::callbackFromWayPoints, this);
   sub2_ = nh_.subscribe("current_pose", 10, &PurePursuitNode::callbackFromCurrentPose, this);
   sub3_ = nh_.subscribe("config/waypoint_follower", 10, &PurePursuitNode::callbackFromConfig, this);
   sub4_ = nh_.subscribe("current_velocity", 10, &PurePursuitNode::callbackFromCurrentVelocity, this);
